@@ -1,0 +1,16 @@
+Create file on Github and synchronize on git. Test attempt
+BSS to change hostname (namec.sc)
+
+y = `hostname`
+
+read -p "enter new hostname: "  hname
+
+echo $hname > /etc/nodename
+
+echo $hname > /etc/hostname.e1000g0
+
+sed s/$y/$hname/ /etc/hosts > t && cat t > /etc/hosts && rm t
+
+hostname $hname
+
+echo "Hostname successfully changed to `hostname`"
